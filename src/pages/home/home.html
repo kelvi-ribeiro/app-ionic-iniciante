@@ -5,17 +5,17 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card>
-  <ion-item>
-      <ion-avatar item-start>
-        <img src="https://osegredo.com.br/wp-content/uploads/2017/07/9-maneiras-de-se-tornar-uma-pessoa-melhor-830x450.jpg" alt="">
+  <ion-card *ngFor="let filme of filmes;">
+    <ion-item >
+      <ion-avatar>
+        <img src="https://pbs.twimg.com/profile_images/3099373544/2b201bf7b9396d57cb6c7fb50e68299c.jpeg">
       </ion-avatar>
-      <h2>Megatubarão</h2> 
-      <p>19/09/2018</p>     
+      <h2>{{filme.original_title}}</h2>
+      <p>{{filme.release_date}}</p>
     </ion-item>
-    <img src="http://br.web.img3.acsta.net/c_300_300/pictures/18/06/28/13/20/2322500.jpg">
-      <ion-card-content>
-          <p>a fossa mais profunda do Oceano Pacífico, a tripulação de um submarino fica presa dentro do local após ser atacada por uma criatura pré-histórica que se achava estar extinta, um tubarão de mais de 20 metros de comprimento, o Megalodon.</p>
-      </ion-card-content>
-    </ion-card>    
+    <img [src]="pathImagens + '/' +  filme.backdrop_path">
+    <ion-card-content>
+      <p>Na fossa mais profunda do Oceano Pacífico, a tripulação de um submarino fica presa dentro do local após ser atacada por uma criatura pré-histórica que se achava estar extinta, um tubarão de mais de 20 metros de comprimento, o Megalodon</p>
+    </ion-card-content>
+  </ion-card>  
 </ion-content>
